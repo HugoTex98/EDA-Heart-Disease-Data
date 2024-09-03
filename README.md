@@ -76,8 +76,8 @@ The code is written in Python and requires the following libraries:
 
 1. **Clone the repository:**
     ```bash
-    git clone https://github.com/your-username/your-repo.git
-    cd your-repo
+    git clone https://github.com/your-username/EDA-Heart-Disease-Data.git
+    cd EDA-Heart-Disease-Data
     ```
 2. **Create a virtual environment and activate it:**
     ```bash
