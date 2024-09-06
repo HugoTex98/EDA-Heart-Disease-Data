@@ -32,7 +32,8 @@ def create_results_run_folder() -> Path:
     in the format 'YYYYMMDD_HHMMSS'. If the folder already exists, a message is printed to indicate this.
     
     Returns:
-        Path: The path to the newly created folder, or the existing folder if it was already present.
+        Path: The path to the newly created folder, or the existing folder if it was already present,
+              for the run results.
     
     Raises:
         FileExistsError: If the folder already exists (caught internally and logged).
@@ -48,7 +49,7 @@ def create_results_run_folder() -> Path:
     return path
 
 # Dataset directory
-dataset_directory = Path(r'C:\Users\hugot\OneDrive\Ambiente de Trabalho\Projetos_DataScience\Hands_on_Projects\EDA_Heart_Disease_Data\dataset/heart_cleaned.csv')
+dataset_directory = 'https://raw.githubusercontent.com/HugoTex98/EDA-Heart-Disease-Data/main/dataset/heart_cleaned.csv'
 
 user_input = 0
 while True:
