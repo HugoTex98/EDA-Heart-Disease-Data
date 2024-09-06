@@ -2,11 +2,12 @@ import pandas as pd
 import numpy as np
 import matplotlib.pyplot as plt
 import seaborn as sns
+from pathlib import Path
 from ShowFeatures import ShowFeatures
 from AgeAverage import AgeAverage
 
 
-def Age_HDKDSC(heart_dataset: pd.DataFrame):
+def Age_HDKDSC(heart_dataset: pd.DataFrame, results_folder: Path):
     """ 
     Visualize the relationship between average age and various diseases.
 
@@ -19,6 +20,8 @@ def Age_HDKDSC(heart_dataset: pd.DataFrame):
     Parameters:
         heart_dataset (pd.DataFrame): The input DataFrame containing the 'AgeAverage', 
                                     'HeartDisease', 'KidneyDisease', and 'SkinCancer' columns.
+        results_folder (Path): The path to the newly created folder, or the existing folder if
+                               it was already present, to store results.
 
     Returns:
         None: The function does not return any value but generates and displays KDE plots.
@@ -53,4 +56,5 @@ def Age_HDKDSC(heart_dataset: pd.DataFrame):
     plt.title('KDE Plot of Average Age by Disease')
     plt.xlabel('Average Age')
     plt.ylabel('Density')
+    plt.savefig(Path.joinpath(results_folder, "AverageAge_by_Disease_KDEPlot.png"))
     plt.show(block=False)

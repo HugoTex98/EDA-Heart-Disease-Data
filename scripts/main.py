@@ -25,6 +25,18 @@ from CoMatrix import *
 
 
 def create_results_run_folder() -> Path:
+    """
+    Creates a folder within the current working directory to store results, named with the current timestamp.
+    
+    The folder is created inside a 'results' directory, and its name is based on the current date and time 
+    in the format 'YYYYMMDD_HHMMSS'. If the folder already exists, a message is printed to indicate this.
+    
+    Returns:
+        Path: The path to the newly created folder, or the existing folder if it was already present.
+    
+    Raises:
+        FileExistsError: If the folder already exists (caught internally and logged).
+    """
     path = Path.cwd() / "results" / datetime.now().strftime(format="%Y%m%d_%H%M%S")
     try:
         path.mkdir(parents=True, exist_ok=False)
@@ -36,7 +48,7 @@ def create_results_run_folder() -> Path:
     return path
 
 # Dataset directory
-dataset_directory = Path(r'C:\Users\hugot\OneDrive\Ambiente de Trabalho\Projetos_DataScience\Hands_on_Projects\Processing_Viz_Heart_Disease_Data\EDA_Heart_Disease_Data\dataset/heart_cleaned.csv')
+dataset_directory = Path(r'C:\Users\hugot\OneDrive\Ambiente de Trabalho\Projetos_DataScience\Hands_on_Projects\EDA_Heart_Disease_Data\dataset/heart_cleaned.csv')
 
 user_input = 0
 while True:
@@ -128,16 +140,16 @@ while True:
             CatStat(heart_dataset)
 
         elif user_input3 == 9:
-            CatGraph(heart_dataset) 
+            CatGraph(heart_dataset, results_folder) 
 
         elif user_input3 == 10:
-            BMI_HD(heart_dataset)
+            BMI_HD(heart_dataset, results_folder)
 
         elif user_input3 == 11:
-            Age_HDKDSC(heart_dataset)  
+            Age_HDKDSC(heart_dataset, results_folder)  
 
         elif user_input3 == 12:
-            CoMatrix(heart_dataset)
+            CoMatrix(heart_dataset, results_folder)
             
         elif user_input3 == 13:
             break

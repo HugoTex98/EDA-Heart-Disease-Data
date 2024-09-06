@@ -1,10 +1,11 @@
 import matplotlib.pyplot as plt
 import pandas as pd 
 import seaborn as sns
+from pathlib import Path
 from ShowFeatures import ShowFeatures
 
 
-def BMI_HD(heart_dataset: pd.DataFrame):
+def BMI_HD(heart_dataset: pd.DataFrame, results_folder: Path):
     """ 
     Visualize the relationship between BMI and heart disease.
 
@@ -15,6 +16,7 @@ def BMI_HD(heart_dataset: pd.DataFrame):
 
     Parameters:
         heart_dataset (pd.DataFrame): The input DataFrame containing 'BMI' and 'HeartDisease' columns.
+        results_folder (Path): The path to the newly created folder, or the existing folder if it was already present, to store results.
 
     Returns:
         None: The function does not return any value but generates and displays plots.
@@ -51,4 +53,5 @@ def BMI_HD(heart_dataset: pd.DataFrame):
     ax3.set_title('BMI Distribution with Heart Disease')
 
     plt.tight_layout()
+    plt.savefig(Path.joinpath(results_folder, "BMI_Distribution_vs_Heart_Disease.png"))
     plt.show(block=False)

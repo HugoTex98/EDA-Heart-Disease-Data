@@ -1,10 +1,11 @@
 import pandas as pd
 import seaborn as sns
 import matplotlib.pyplot as plt
+from pathlib import Path
 from ShowFeatures import ShowFeatures
 
 
-def CoMatrix(heart_dataset: pd.DataFrame):
+def CoMatrix(heart_dataset: pd.DataFrame, results_folder: Path):
     """ 
     Calculate and visualize the correlation matrix for categorical variables.
 
@@ -14,7 +15,10 @@ def CoMatrix(heart_dataset: pd.DataFrame):
     using Spearman's rank correlation coefficient.
 
     Parameters:
-        heart_dataset (pd.DataFrame): The input DataFrame containing categorical variables for which the correlation matrix is calculated.
+        heart_dataset (pd.DataFrame): The input DataFrame containing categorical variables for 
+                                      which the correlation matrix is calculated.
+        results_folder (Path): The path to the newly created folder, or the existing folder if
+                               it was already present, to store results.
 
     Returns:
         None: The function does not return any value but generates and displays a heatmap of the correlation matrix.
@@ -33,4 +37,5 @@ def CoMatrix(heart_dataset: pd.DataFrame):
     fig, ax1 = plt.subplots()
     sns.heatmap(corr_cat, cmap = "crest", ax = ax1)
     ax1.set_title('Correlation Matrix of Categorical Variables')
+    plt.savefig(Path.joinpath(results_folder, "CorrelationMatrix.png"))
     plt.show(block=False)
