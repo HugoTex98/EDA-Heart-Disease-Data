@@ -114,10 +114,8 @@ docker run -it --rm breast-cancer-prediction
  - --rm: Automatically removes the container once it stops running, keeping your environment clean.
  - breast-cancer-prediction: The name of the Docker image you built.
 
-### 3. Accessing Container Output
-Since the project is not a web application and does not expose any ports, the output from the script will be directly visible in the terminal where the container runs. If the script generates output files, they will be saved in the container's file system.
 
-### 4. Stopping the Container
+Since the project is not a web application and does not expose any ports, the output from the script will be directly visible in the terminal where the container runs. If the script generates output files, they will be saved in the container's file system.
 
 To stop the container while it’s running, you can do so by pressing Ctrl + C in the terminal where the container is running.
 
