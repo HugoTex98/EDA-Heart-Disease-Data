@@ -67,6 +67,7 @@ The program implements a command-line interface (CLI) with the following functio
 The code is written in Python and requires the following libraries:
 
 - Pandas
+- Requests
 - NumPy
 - Matplotlib
 - Seaborn
@@ -76,7 +77,7 @@ The code is written in Python and requires the following libraries:
 
 1. **Clone the repository:**
     ```bash
-    git clone https://github.com/your-username/EDA-Heart-Disease-Data.git
+    git clone https://github.com/HugoTex98/EDA-Heart-Disease-Data.git
     cd EDA-Heart-Disease-Data
     ```
 2. **Create a virtual environment and activate it:**
@@ -98,7 +99,7 @@ To build and run the Docker container for this project, follow the steps below:
 First, navigate to the root directory of the project (where `Dockerfile` is located) and run the following command to build the Docker image:
 
 ```bash
-docker build -t breast-cancer-prediction .
+docker build -t eda-heart-disease-data .
 ```
 
 This command builds the Docker image using the instructions in the Dockerfile and tags it as breast-cancer-prediction.
@@ -108,12 +109,12 @@ This command builds the Docker image using the instructions in the Dockerfile an
 Once the image is built, you can run the Docker container using the following command:
 
 ```bash
-docker run -it --rm breast-cancer-prediction
+docker run -it --rm eda-heart-disease-data
 ```
- - -it: Runs the container in interactive mode, allowing you to interact with the terminal inside the container.
- - --rm: Automatically removes the container once it stops running, keeping your environment clean.
- - breast-cancer-prediction: The name of the Docker image you built.
 
+ - **`-it`**: Runs the container in interactive mode, allowing you to interact with the terminal inside the container.
+ - **`--rm`**: Automatically removes the container once it stops running, keeping your environment clean.
+ - **`eda-heart-disease-data`**: The name of the Docker image you built.
 
 Since the project is not a web application and does not expose any ports, the output from the script will be directly visible in the terminal where the container runs. If the script generates output files, they will be saved in the container's file system.
 
@@ -126,4 +127,5 @@ Run the program using the command-line interface:
 ```bash
 python main.py
 ```
+
 Follow the prompts to load data, process it, and visualize various aspects related to heart disease indicators.
