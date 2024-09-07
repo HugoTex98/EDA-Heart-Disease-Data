@@ -8,24 +8,27 @@ The main objective of this project is to develop a Python program for processing
 
 The dataset comprises 319,795 patients and includes 18 variables such as BMI, smoking habits, alcohol consumption, and various health conditions. Here's a brief description of each variable:
 
-- **`HeartDisease`**: Indicates whether the patient has coronary artery disease or has suffered a myocardial infarction (binary: Yes/No).
-- **`BMI`**: Body Mass Index, calculated from the height and weight of the patient (numeric).
-- **`Smoking`**: Indicates if the patient has smoked at least 100 cigarettes in their lifetime (binary: Yes/No).
-- **`AlcoholDrinking`**: Indicates if the patient is a heavy drinker (men: >14 drinks/week, women: >7 drinks/week) (binary: Yes/No).
-- **`Stroke`**: Indicates if the patient has ever had a stroke (binary: Yes/No).
-- **`PhysicalHealth`**: Number of days in the past 30 days that the patient’s physical health was not good (numeric: 0-30).
-- **`MentalHealth`**: Number of days in the past 30 days that the patient’s mental health was not good (numeric: 0-30).
-- **`DiffWalking`**: Indicates if the patient has serious difficulty walking or climbing stairs (binary: Yes/No).
-- **`Sex`**: The sex of the patient (categorical: Male/Female).
-- **`AgeCategory`**: Age category of the patient, divided into 14 groups (categorical).
-- **`Race`**: Imputed race of the patient (categorical).
-- **`Diabetic`**: Indicates if the patient has diabetes (binary: Yes/No).
-- **`PhysicalActivity`**: Indicates if the patient engaged in physical activity or exercise in the past 30 days outside of their regular job (binary: Yes/No).
-- **`GenHealth`**: The patient's general health status (categorical).
-- **`SleepTime`**: The average number of hours of sleep the patient gets in a 24-hour period (numeric).
-- **`Asthma`**: Indicates if the patient currently has or has had asthma (binary: Yes/No).
-- **`KidneyDisease`**: Indicates if the patient has kidney disease, excluding kidney stones, bladder infection, or incontinence (binary: Yes/No).
-- **`SkinCancer`**: Indicates if the patient has or has had skin cancer (binary: Yes/No).
+
+|      Column Name     |                                                        Description                                                                    |
+|----------------------|---------------------------------------------------------------------------------------------------------------------------------------|
+| **`HeartDisease`**: Indicates whether the patient has coronary artery disease or has suffered a myocardial infarction (binary: Yes/No).| 
+| **`BMI`**: Body Mass Index, calculated from the height and weight of the patient (numeric).                                                                  | 
+| **`Smoking`**: Indicates if the patient has smoked at least 100 cigarettes in their lifetime (binary: Yes/No).                                               | 
+| **`AlcoholDrinking`**: Indicates if the patient is a heavy drinker (men: >14 drinks/week, women: >7 drinks/week) (binary: Yes/No).                           | 
+| **`Stroke`**: Indicates if the patient has ever had a stroke (binary: Yes/No).                                                                               | 
+| **`PhysicalHealth`**: Number of days in the past 30 days that the patient’s physical health was not good (numeric: 0-30).                                    | 
+| **`MentalHealth`**: Number of days in the past 30 days that the patient’s mental health was not good (numeric: 0-30).                                        | 
+| **`DiffWalking`**: Indicates if the patient has serious difficulty walking or climbing stairs (binary: Yes/No).                                              | 
+| **`Sex`**: The sex of the patient (categorical: Male/Female).                                                                                                | 
+| **`AgeCategory`**: Age category of the patient, divided into 14 groups (categorical).                                                                        | 
+| **`Race`**: Imputed race of the patient (categorical).                                                                                                       | 
+| **`Diabetic`**: Indicates if the patient has diabetes (binary: Yes/No).                                                                                      | 
+| **`PhysicalActivity`**: Indicates if the patient engaged in physical activity or exercise in the past 30 days outside of their regular job (binary: Yes/No). | 
+| **`GenHealth`**: The patient's general health status (categorical).                                                                                          | 
+| **`SleepTime`**: The average number of hours of sleep the patient gets in a 24-hour period (numeric).                                                        | 
+| **`Asthma`**: Indicates if the patient currently has or has had asthma (binary: Yes/No).                                                                     | 
+| **`KidneyDisease`**: Indicates if the patient has kidney disease, excluding kidney stones, bladder infection, or incontinence (binary: Yes/No).              | 
+| **`SkinCancer`**: Indicates if the patient has or has had skin cancer (binary: Yes/No).                                                                      | 
 
 ## Program
 
