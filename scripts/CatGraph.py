@@ -1,9 +1,10 @@
+import logging
 import pandas as pd
 import plotly.graph_objects as go
 import plotly.io as pio
 from pathlib import Path
 from plotly.subplots import make_subplots
-from ShowFeatures import ShowFeatures
+from __init__ import ShowFeatures
 
 
 def CatGraph(heart_dataset: pd.DataFrame, results_folder: Path):
@@ -44,4 +45,5 @@ def CatGraph(heart_dataset: pd.DataFrame, results_folder: Path):
         fig.add_trace(go.Pie(labels = labels, values = values, hole = 0.3))
         fig.update_layout(title='{}'.format(colname))
         fig.write_image(Path.joinpath(results_folder, f"{colname}_PieChart.png"))
+        logging.info(f"Saved {colname}_PieChart.png!")
         fig.show()

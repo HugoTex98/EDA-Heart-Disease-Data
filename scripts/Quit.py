@@ -1,5 +1,6 @@
-import pandas as pd
+import logging
 import sys
+import pandas as pd
 
 
 def Quit(heart_dataset: pd.DataFrame):
@@ -23,8 +24,10 @@ def Quit(heart_dataset: pd.DataFrame):
     
     if heart_dataset is not None:
         del heart_dataset
-        sys.exit(("DataFrame deleted! Program is over."))
+        logging.info("DataFrame deleted! Program is over.")
+        sys.exit()
 
     else:
-        sys.exit(("Not possible to delete the DataFrame! Program is over.\n"))
+        logging.error("Not possible to delete the DataFrame! Program is over.\n")
+        sys.exit()
 

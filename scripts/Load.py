@@ -1,6 +1,7 @@
-from pathlib import Path
+import logging
 import pandas as pd
 import wx
+from pathlib import Path
 
 
 def get_path() -> Path:
@@ -49,16 +50,16 @@ def Load() -> pd.DataFrame:
     if heart_cleaned_dir.suffix == '.csv':
         # read the dataset choosen previously 
         heart_cleaned_file = pd.read_csv(''+ str(heart_cleaned_dir))
-        print (heart_cleaned_file.info())
-        print('\n First 10 records: \n')
-        print (heart_cleaned_file.head(n=10))
-        print('\n Last 10 records: \n')
-        print (heart_cleaned_file.tail(n=10))
+        logging.info(heart_cleaned_file.info())
+        logging.info('\n First 10 records: \n')
+        logging.info (heart_cleaned_file.head(n=10))
+        logging.info('\n Last 10 records: \n')
+        logging.info (heart_cleaned_file.tail(n=10))
         
     elif heart_cleaned_dir.suffix != '.csv':
         # if the file has an extension not supported, DataFrame remains empty
         heart_cleaned_file = pd.DataFrame({'Empty' : []})
-        print("File not found...")
+        logging.error("File not found...")
 
     return heart_cleaned_file
     

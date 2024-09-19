@@ -1,3 +1,4 @@
+import logging
 import pandas as pd 
 from typing import Tuple
 
@@ -41,7 +42,7 @@ def AgeAverage(heart_dataset: pd.DataFrame) -> Tuple[pd.DataFrame, pd.DataFrame]
     
     # Average of the values in the lower and upper age limits for each row
     Age_Values['AgeAverage'] = Age_Values[['LowerLimit', 'UpperLimit']].mean(axis=1)
-    print(Age_Values['AgeAverage'])
+    logging.info(Age_Values['AgeAverage'])
     
     # Add Age_Average to the original DataFrame `hear_dataset`
     heart_dataset['AgeAverage'] = Age_Values['AgeAverage']

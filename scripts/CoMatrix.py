@@ -1,8 +1,9 @@
+import logging
 import pandas as pd
 import seaborn as sns
 import matplotlib.pyplot as plt
 from pathlib import Path
-from ShowFeatures import ShowFeatures
+from __init__ import ShowFeatures
 
 
 def CoMatrix(heart_dataset: pd.DataFrame, results_folder: Path):
@@ -38,4 +39,5 @@ def CoMatrix(heart_dataset: pd.DataFrame, results_folder: Path):
     sns.heatmap(corr_cat, cmap = "crest", ax = ax1)
     ax1.set_title('Correlation Matrix of Categorical Variables')
     plt.savefig(Path.joinpath(results_folder, "CorrelationMatrix.png"))
+    logging.info("Saved CorrelationMatrix.png!")
     plt.show(block=False)

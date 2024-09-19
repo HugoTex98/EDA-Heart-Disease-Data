@@ -1,5 +1,6 @@
+import logging
 import pandas as pd
-from ShowFeatures import ShowFeatures
+from __init__ import ShowFeatures
 
 
 def NumStat(heart_dataset: pd.DataFrame):
@@ -26,4 +27,4 @@ def NumStat(heart_dataset: pd.DataFrame):
     num_vars, _ = ShowFeatures(heart_dataset)
     
     # Statistics of Numerical variables (rounded at 3rd decimal)
-    print(round(num_vars.describe(), 3).transpose())
+    logging.info(round(num_vars.describe(), 3).transpose())

@@ -1,5 +1,6 @@
+import logging
 import pandas as pd
-from ShowFeatures import *
+from __init__ import ShowFeatures
 
 
 def CatStat(heart_dataset: pd.DataFrame):
@@ -24,4 +25,4 @@ def CatStat(heart_dataset: pd.DataFrame):
     # Get Categorical Variables returned in ShowFeatures function
     _ , cat_vars = ShowFeatures(heart_dataset)
     # Get statistics of the categorical variables
-    print(cat_vars.describe().transpose())
+    logging.info(cat_vars.describe().transpose())

@@ -1,8 +1,9 @@
+import logging
 import matplotlib.pyplot as plt
 import pandas as pd 
 import seaborn as sns
 from pathlib import Path
-from ShowFeatures import ShowFeatures
+from __init__ import ShowFeatures
 
 
 def BMI_HD(heart_dataset: pd.DataFrame, results_folder: Path):
@@ -54,4 +55,5 @@ def BMI_HD(heart_dataset: pd.DataFrame, results_folder: Path):
 
     plt.tight_layout()
     plt.savefig(Path.joinpath(results_folder, "BMI_Distribution_vs_Heart_Disease.png"))
+    logging.info("Saved BMI_Distribution_vs_Heart_Disease.png!")
     plt.show(block=False)

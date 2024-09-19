@@ -1,10 +1,11 @@
+import logging
 import pandas as pd 
 import numpy as np
 import matplotlib.pyplot as plt
 import seaborn as sns
 from pathlib import Path
-from ShowFeatures import ShowFeatures
-from AgeAverage import AgeAverage
+from __init__ import ShowFeatures
+from __init__ import AgeAverage
 
 
 def Age_HDKDSC(heart_dataset: pd.DataFrame, results_folder: Path):
@@ -57,4 +58,5 @@ def Age_HDKDSC(heart_dataset: pd.DataFrame, results_folder: Path):
     plt.xlabel('Average Age')
     plt.ylabel('Density')
     plt.savefig(Path.joinpath(results_folder, "AverageAge_by_Disease_KDEPlot.png"))
+    logging.info("Saved AverageAge_by_Disease_KDEPlot.png!")
     plt.show(block=False)
