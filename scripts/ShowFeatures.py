@@ -1,7 +1,8 @@
+import logging
 import pandas as pd
 import numpy as np
 from typing import Tuple
-from AgeAverage import AgeAverage
+from __init__ import AgeAverage
 
 def ShowFeatures(heart_dataset: pd.DataFrame) -> Tuple[np.array, np.array]:
     """ 
@@ -32,8 +33,8 @@ def ShowFeatures(heart_dataset: pd.DataFrame) -> Tuple[np.array, np.array]:
     num_vars = heart_dataset_new.select_dtypes(include=[np.number])
     cat_vars = heart_dataset_new.select_dtypes(exclude=[np.number])
     
-    print('\nNumerical Variables: \n', list(num_vars.columns))
-    print('\nCategorical Variables: \n', list(cat_vars.columns))
+    logging.info('\nNumerical Variables: \n', list(num_vars.columns))
+    logging.info('\nCategorical Variables: \n', list(cat_vars.columns))
     print('\n')
     
     return num_vars, cat_vars
